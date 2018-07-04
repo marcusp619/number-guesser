@@ -1,0 +1,92 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  header {
+    background: #404041;
+    text-align: center;
+    padding: 15px 0;
+  }
+  
+  header span {
+    color: #ED458B;
+    font-weight: 700;
+  }
+  
+  header h1 {
+    color: #E6E7E8;
+    font-size: 3em;
+  }
+  
+  section {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .btn {
+    border-radius: 30px;
+    width: 150px;
+    padding: .8em;
+    margin: 0 40px 30px 40px;
+  }
+  
+  .btn-wide {
+    width: 50%;
+    padding: .5em;
+    margin: 25px;
+  }
+  
+  .btn-active {
+    background: #929497;
+    color: #FFFFFF;
+  }
+  
+  .btn-disabled {
+    background: #D0D2D3;
+    color: #FFFFFF;
+  }
+  
+  input.btn-active:hover, button.btn-active:hover {
+    background: #EB008B;
+    color: #FFFFFF;
+    transition: background-color .5s;
+  }
+  
+  
+  section input[type="text"] {
+    display: block;
+    margin: 25px auto;
+    width: 45%;
+    height: 30px;
+    font-size: 20px;
+    padding: .8em .5em;
+    
+  }
+  
+  section input[type="text"]::placeholder {
+    color: #D0D2D3;
+    font-weight: 100;
+  }
+  
+  section h4 {
+    color: #404041;
+  }
+  
+  section h1 {
+    color: #EB008B;
+    font-size: 9em;
+  }
+  

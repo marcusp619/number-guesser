@@ -6,28 +6,30 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-
   <header>
-    <h1>
-      <span>Number</span>
-      Guesser
-    </h1>
+    <h1><span>Number</span> Guesser</h1>
   </header>
+  
+  <main>
+    <section>
+      <form action="">
+        <input type="text" id="user-input-field" placeholder="Enter your guess">
+        <input type="submit" id="user-guess-submit" class="btn btn-disabled" value="Guess" disabled>
+        <input type="reset" class="btn btn-disabled" value="Clear" disabled>
+      </form>
+      
+      <div>
+        <h4 class="result-msg"> </h4>
+        <h1 class="your-guess-result"> </h1>
+        <h4 class="feedback-msg"> </h4>
+      </div>
+      
+      <button class="btn btn-wide btn-disabled resetBtn" onClick="resetGame()" disabled>Reset</button>
+    </section>
+    
+  </main>
 
-  <section>
-    <input type="text" name="">
-
-    <button>Guess</button>
-    <button>Clear</button>
-
-    <p>Your last guess was</p>
-
-    <div>25</div>
-
-    <div></div>
-
-    <button>Reset</button>
-  </section>
+  <script src="main.js"></script>
 </body>
 </html>
 
