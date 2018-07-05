@@ -80,6 +80,12 @@ userInputField.addEventListener('keyup', function(event) {
   }
 });
 
+clearBtn.addEventListener('click', function() {
+  userInputField.value = '';
+  userInputField.focus();  
+  disableBtns();
+});
+
 userGuessSubmit.addEventListener('click', function() {
   event.preventDefault();
   checkTheGuess();
@@ -88,4 +94,3 @@ userGuessSubmit.addEventListener('click', function() {
   resetBtn.classList.remove('btn-disabled');
   resetBtn.classList.add('btn-active'); 
 });
-

@@ -8,16 +8,16 @@ html {
   }
   
   body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
     margin: 0;
     padding: 0;
-    font-weight: 100;
-    font-family: 'Open Sans', sans-serif;
   }
   
   header {
     background: #404041;
-    text-align: center;
     padding: 15px 0;
+    text-align: center;
   }
   
   header span {
@@ -31,22 +31,22 @@ html {
   }
   
   section {
-    width: 50%;
     margin: auto;
     text-align: center;
+    width: 50%;
   }
   
   .btn {
     border-radius: 30px;
-    width: 150px;
-    padding: .8em;
     margin: 0 40px 30px 40px;
+    padding: .8em;
+    width: 150px;
   }
   
   .btn-wide {
-    width: 50%;
-    padding: .5em;
     margin: 25px;
+    padding: .5em;
+    width: 50%;
   }
   
   .btn-active {
@@ -58,29 +58,32 @@ html {
     background: #D0D2D3;
     color: #FFFFFF;
   }
+
+  .input-fields {
+    display: block;
+    font-size: 20px;
+    height: 30px;
+    margin: 25px auto;
+    padding: .8em .5em;
+    width: 45%;
+  }
+
+  .input-fields-30 {
+    margin: 0 0 15px auto;
+    width: 30%;
+  }
+
+  .input-fields::placeholder {
+    color: #D0D2D3;
+    font-weight: 100;
+  }
   
   input.btn-active:hover, button.btn-active:hover {
     background: #EB008B;
     color: #FFFFFF;
     transition: background-color .5s;
   }
-  
-  
-  section input[type="number"] {
-    display: block;
-    margin: 25px auto;
-    width: 45%;
-    height: 30px;
-    font-size: 20px;
-    padding: .8em .5em;
     
-  }
-  
-  section input[type="text"]::placeholder {
-    color: #D0D2D3;
-    font-weight: 100;
-  }
-  
   section h4 {
     color: #404041;
   }

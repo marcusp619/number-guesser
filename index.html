@@ -13,8 +13,10 @@
   <main>
     <section>
       <form autocomplete="off">
-        <input type="number" id="user-input-field" placeholder="Enter your guess" required>
+        <input type="number" id="user-input-field" class="input-fields" placeholder="Enter your guess" required>
+        
         <input type="submit" id="user-guess-submit" class="btn btn-disabled" value="Guess" disabled>
+        
         <input type="reset" id="clear-user-guess"class="btn btn-disabled" value="Clear" disabled>
       </form>
       
@@ -25,11 +27,9 @@
       </div>
       
       <button class="btn btn-wide btn-disabled resetBtn" onClick="resetGame()" disabled>Reset</button>
-    </section>
-    
+    </section> 
   </main>
 
   <script src="main.js"></script>
 </body>
 </html>
-
