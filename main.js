@@ -1,10 +1,10 @@
-// Need to reset text after game finished
 var randomNumGenerator = Math.floor(Math.random() * 100) + 1; 
 var userGuessSubmit = document.querySelector('#user-guess-submit');
 var userInputField = document.querySelector('#user-input-field');
 var feedbackMsg = document.querySelector('.feedback-msg');
 var resetBtn = document.querySelector('.resetBtn');
 var allBtns = document.querySelectorAll('.btn');
+var clearBtn = document.querySelector('#clear-user-guess');
 
 function checkTheGuess() { 
   var theUsersGuess = parseInt(userInputField.value);
@@ -13,7 +13,7 @@ function checkTheGuess() {
     setGameFinished();
   } else if (theUsersGuess > randomNumGenerator) {
     setMessages('That is too high');
-  } else {
+  } else if (theUsersGuess < randomNumGenerator) {
     setMessages('That is too low');
   }   
 }
@@ -50,6 +50,8 @@ function disableBtns() {
     allBtns[i].classList.add('btn-disabled');
     allBtns[i].classList.remove('btn-active'); 
     userGuessSubmit.disabled = true;
+    resetBtn.disabled = true;
+    clearBtn.disabled = true;
   }  
 }
 
@@ -72,12 +74,18 @@ function resetGame() {
   disableBtns();
 }
 
-userInputField.addEventListener('keypress', function() {
- activateBtns();
+userInputField.addEventListener('keyup', function(event) {
+  if (userInputField.value !== '') {
+    activateBtns();
+  }
 });
 
 userGuessSubmit.addEventListener('click', function() {
   event.preventDefault();
   checkTheGuess();
+  disableBtns();
+  resetBtn.disabled = false;
+  resetBtn.classList.remove('btn-disabled');
+  resetBtn.classList.add('btn-active'); 
 });
 

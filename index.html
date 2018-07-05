@@ -12,10 +12,10 @@
   
   <main>
     <section>
-      <form>
-        <input type="number" id="user-input-field" placeholder="Enter your guess">
+      <form autocomplete="off">
+        <input type="number" id="user-input-field" placeholder="Enter your guess" required>
         <input type="submit" id="user-guess-submit" class="btn btn-disabled" value="Guess" disabled>
-        <input type="reset" class="btn btn-disabled" value="Clear" disabled>
+        <input type="reset" id="clear-user-guess"class="btn btn-disabled" value="Clear" disabled>
       </form>
       
       <div class="elements">
