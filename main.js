@@ -1,7 +1,5 @@
 // Need to reset text after game finished
 var randomNumGenerator = Math.floor(Math.random() * 100) + 1; 
-var yourGuessResult = document.querySelector('.your-guess-result');
-var resultMsg = document.querySelector('.result-msg');
 var userGuessSubmit = document.querySelector('#user-guess-submit');
 var userInputField = document.querySelector('#user-input-field');
 var feedbackMsg = document.querySelector('.feedback-msg');
@@ -21,6 +19,7 @@ function checkTheGuess() {
 }
 
 function isANum(theUsersGuess) {
+  var yourGuessResult = document.querySelector('.your-guess-result');
   if (typeof theUsersGuess === 'number' ) {
     if (theUsersGuess >= 1 && theUsersGuess <= 100) {
       document.querySelector('.result-msg').innerText = 'Your last guess was ';
@@ -63,9 +62,14 @@ function setGameFinished() {
 }
 
 function resetGame() {
+  var resetElements = document.querySelectorAll('.elements h4, .elements h1');
+  for (var i = 0 ; i < resetElements.length ; i++) {
+    resetElements[i].innerText = '';
+  }
   userInputField.value = '';
   userInputField.focus();  
   randomNumGenerator = Math.floor(Math.random() * 100) + 1; 
+  disableBtns();
 }
 
 userInputField.addEventListener('keypress', function() {
