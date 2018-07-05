@@ -1,4 +1,5 @@
 var randomNumGenerator = Math.floor(Math.random() * 100) + 1; 
+console.log(randomNumGenerator);
 var userGuessSubmit = document.querySelector('#user-guess-submit');
 var userInputField = document.querySelector('#user-input-field');
 var feedbackMsg = document.querySelector('.feedback-msg');
@@ -8,33 +9,41 @@ var clearBtn = document.querySelector('#clear-user-guess');
 
 function checkTheGuess() { 
   var theUsersGuess = parseInt(userInputField.value);
-  isANum(theUsersGuess); 
-  if (theUsersGuess === randomNumGenerator) {
+  if ( isANumber(theUsersGuess) ) {
+    console.log(theUsersGuess);
+    if ( theUsersGuess === randomNumGenerator ) {
     setGameFinished();
-  } else if (theUsersGuess > randomNumGenerator) {
+  } else if ( theUsersGuess > randomNumGenerator ) {
     setMessages('That is too high');
-  } else if (theUsersGuess < randomNumGenerator) {
+  } else if ( theUsersGuess < randomNumGenerator ) {
     setMessages('That is too low');
-  }   
+    }
+  }  
 }
 
-function isANum(theUsersGuess) {
+function isANumber(theUsersGuess) {
   var yourGuessResult = document.querySelector('.your-guess-result');
-  if (typeof theUsersGuess === 'number' ) {
-    if (theUsersGuess >= 1 && theUsersGuess <= 100) {
+  if ( typeof theUsersGuess === 'number' ) {
+    if ( theUsersGuess >= 1 && theUsersGuess <= 100 ) {
       document.querySelector('.result-msg').innerText = 'Your last guess was ';
       yourGuessResult.innerText = theUsersGuess;  
     } else {
       alert('Your guess was not between 1 and 100');
       disableBtns();
-    }
+      clearFocusInput();
+    } 
   }
+  return yourGuessResult;
+}
+
+function clearFocusInput() {
+  userInputField.value = '';
+  userInputField.focus();
 }
 
 function setMessages(message) {
-    feedbackMsg.innerText = message;
-    userInputField.value = '';
-    userInputField.focus();
+  feedbackMsg.innerText = message;
+  clearFocusInput();
 }
 
 function activateBtns() {
@@ -65,24 +74,24 @@ function setGameFinished() {
 
 function resetGame() {
   var resetElements = document.querySelectorAll('.elements h4, .elements h1');
-  for (var i = 0 ; i < resetElements.length ; i++) {
+  for (var i = 0; i < resetElements.length; i++) {
     resetElements[i].innerText = '';
   }
-  userInputField.value = '';
-  userInputField.focus();  
+  clearFocusInput();
   randomNumGenerator = Math.floor(Math.random() * 100) + 1; 
   disableBtns();
 }
 
 userInputField.addEventListener('keyup', function(event) {
-  if (userInputField.value !== '') {
+  if ( userInputField.value !== '' ) {
     activateBtns();
+  } else {
+    disableBtns();
   }
 });
 
 clearBtn.addEventListener('click', function() {
-  userInputField.value = '';
-  userInputField.focus();  
+  clearFocusInput();  
   disableBtns();
 });
 

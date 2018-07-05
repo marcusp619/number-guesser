@@ -40,7 +40,7 @@ html {
     border-radius: 30px;
     margin: 0 40px 30px 40px;
     padding: .8em;
-    width: 150px;
+    width: 25%;
   }
   
   .btn-wide {
@@ -60,18 +60,14 @@ html {
   }
 
   .input-fields {
-    display: block;
+    display:  block;
     font-size: 20px;
-    height: 30px;
+    height: 40px;
     margin: 25px auto;
     padding: .8em .5em;
-    width: 45%;
+    width: 500px;
   }
 
-  .input-fields-30 {
-    margin: 0 0 15px auto;
-    width: 30%;
-  }
 
   .input-fields::placeholder {
     color: #D0D2D3;
